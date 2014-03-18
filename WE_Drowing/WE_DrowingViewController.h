@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface WE_DrowingViewController : UIViewController
+<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+
+@property (strong, nonatomic) UICollectionView *collectionViews;
+@property (nonatomic, strong) NSArray *assets;
 
 @end

@@ -21,6 +21,7 @@
 		DE650D8318D7CC2300C793EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE650D6518D7CC2300C793EE /* UIKit.framework */; };
 		DE650D8B18D7CC2300C793EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE650D8918D7CC2300C793EE /* InfoPlist.strings */; };
 		DE650D8D18D7CC2300C793EE /* WE_DrowingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE650D8C18D7CC2300C793EE /* WE_DrowingTests.m */; };
+		DEC691A718D81F5E004DD632 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DE650D8818D7CC2300C793EE /* WE_DrowingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WE_DrowingTests-Info.plist"; sourceTree = "<group>"; };
 		DE650D8A18D7CC2300C793EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE650D8C18D7CC2300C793EE /* WE_DrowingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WE_DrowingTests.m; sourceTree = "<group>"; };
+		DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC691A718D81F5E004DD632 /* AssetsLibrary.framework in Frameworks */,
 				DE650D6418D7CC2300C793EE /* CoreGraphics.framework in Frameworks */,
 				DE650D6618D7CC2300C793EE /* UIKit.framework in Frameworks */,
 				DE650D6218D7CC2300C793EE /* Foundation.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		DE650D6018D7CC2300C793EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */,
 				DE650D6118D7CC2300C793EE /* Foundation.framework */,
 				DE650D6318D7CC2300C793EE /* CoreGraphics.framework */,
 				DE650D6518D7CC2300C793EE /* UIKit.framework */,
@@ -112,11 +116,10 @@
 		DE650D6718D7CC2300C793EE /* WE_Drowing */ = {
 			isa = PBXGroup;
 			children = (
-				DE650D7018D7CC2300C793EE /* WE_DrowingAppDelegate.h */,
-				DE650D7118D7CC2300C793EE /* WE_DrowingAppDelegate.m */,
-				DE650D7318D7CC2300C793EE /* Main.storyboard */,
-				DE650D7618D7CC2300C793EE /* WE_DrowingViewController.h */,
-				DE650D7718D7CC2300C793EE /* WE_DrowingViewController.m */,
+				DEC691A318D80198004DD632 /* AppDelegate */,
+				DEC691A118D80179004DD632 /* VIews */,
+				DEC691A218D80183004DD632 /* Entities */,
+				DEC691A418D801AB004DD632 /* Lib */,
 				DE650D7918D7CC2300C793EE /* Images.xcassets */,
 				DE650D6818D7CC2300C793EE /* Supporting Files */,
 			);
@@ -150,6 +153,47 @@
 				DE650D8918D7CC2300C793EE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEC691A118D80179004DD632 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				DEC691A518D81B59004DD632 /* Main */,
+			);
+			name = VIews;
+			sourceTree = "<group>";
+		};
+		DEC691A218D80183004DD632 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		DEC691A318D80198004DD632 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DE650D7018D7CC2300C793EE /* WE_DrowingAppDelegate.h */,
+				DE650D7118D7CC2300C793EE /* WE_DrowingAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DEC691A418D801AB004DD632 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		DEC691A518D81B59004DD632 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE650D7618D7CC2300C793EE /* WE_DrowingViewController.h */,
+				DE650D7718D7CC2300C793EE /* WE_DrowingViewController.m */,
+				DE650D7318D7CC2300C793EE /* Main.storyboard */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +501,7 @@
 				DE650D9218D7CC2300C793EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE650D9318D7CC2300C793EE /* Build configuration list for PBXNativeTarget "WE_DrowingTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +510,7 @@
 				DE650D9518D7CC2300C793EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
