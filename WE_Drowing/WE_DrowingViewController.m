@@ -4,7 +4,6 @@
 //
 //  Created by JWMAC on 2014. 3. 18..
 //  Copyright (c) 2014년 KimJiWook. All rights reserved.
-//
 
 #import "WE_DrowingViewController.h"
 
@@ -17,6 +16,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Git Test
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
