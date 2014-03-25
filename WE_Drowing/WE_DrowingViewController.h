@@ -13,6 +13,7 @@
 <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) UICollectionView *collectionViews;
+@property (strong, nonatomic) UIView *headerView;
 @property (nonatomic, strong) NSArray *assets;
 
 @end
