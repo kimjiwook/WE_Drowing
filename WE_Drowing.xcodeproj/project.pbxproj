@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE650D5E18D7CC2300C793EE /* WE_Drowing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WE_Drowing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE650D5E18D7CC2300C793EE /* 물먹고 드로잉.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "물먹고 드로잉.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE650D6118D7CC2300C793EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DE650D6318D7CC2300C793EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DE650D6518D7CC2300C793EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -108,7 +108,7 @@
 		DE650D5F18D7CC2300C793EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE650D5E18D7CC2300C793EE /* WE_Drowing.app */,
+				DE650D5E18D7CC2300C793EE /* 물먹고 드로잉.app */,
 				DE650D7F18D7CC2300C793EE /* WE_DrowingTests.xctest */,
 			);
 			name = Products;
@@ -260,7 +260,7 @@
 			);
 			name = WE_Drowing;
 			productName = WE_Drowing;
-			productReference = DE650D5E18D7CC2300C793EE /* WE_Drowing.app */;
+			productReference = DE650D5E18D7CC2300C793EE /* 물먹고 드로잉.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DE650D7E18D7CC2300C793EE /* WE_DrowingTests */ = {
@@ -476,7 +476,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WE_Drowing/WE_Drowing-Prefix.pch";
 				INFOPLIST_FILE = "WE_Drowing/WE_Drowing-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "물먹고 드로잉";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -489,7 +489,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WE_Drowing/WE_Drowing-Prefix.pch";
 				INFOPLIST_FILE = "WE_Drowing/WE_Drowing-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "물먹고 드로잉";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

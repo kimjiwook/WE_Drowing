@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageHelper.h"
 
 @interface ImageEditingViewController : UIViewController
+
+@property (nonatomic, strong) UIImageView *imageView;
+
+- (void) initWithImageView :(UIImage *)image;
 
 @end

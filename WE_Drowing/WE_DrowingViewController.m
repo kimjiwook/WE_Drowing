@@ -16,16 +16,13 @@
 @implementation WE_DrowingViewController
 @synthesize collectionViews, assets;
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-//    return UIStatusBarStyleLightContent;
-    return UIStatusBarStyleDefault;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    
     StretchyHeaderCollectionViewLayout *layout = [[StretchyHeaderCollectionViewLayout alloc] init];
-//    [layout setSectionInset:UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)];
     [layout setItemSize:CGSizeMake(self.view.bounds.size.width, we_HeaderHeight)];
     [layout setHeaderReferenceSize:CGSizeMake(self.view.bounds.size.width, we_HeaderHeight)];
     
@@ -48,6 +45,10 @@
     [status setBackgroundColor:[UIColor purpleColor]];
     [self.view addSubview:status];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }
 
 - (void) assetsLibrayCreate {
@@ -151,9 +152,9 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"ImageEditingView" bundle:nil];
     
     imageEditingViewController = [storyboard instantiateViewControllerWithIdentifier:@"ImageEditingViewController"];
-//    ALAsset *asset = [self.assets[indexPath.row] valueForKey:@"ALAsset"];
-//    ALAssetRepresentation *defaultRep = [asset defaultRepresentation];
-//    [we_ImageViewController initWithImageView:[UIImage imageWithCGImage:[defaultRep fullScreenImage] scale:[defaultRep scale] orientation:0]];
+    ALAsset *asset = [self.assets[indexPath.row] valueForKey:@"ALAsset"];
+    ALAssetRepresentation *defaultRep = [asset defaultRepresentation];
+    [imageEditingViewController initWithImageView:[UIImage imageWithCGImage:[defaultRep fullScreenImage] scale:[defaultRep scale] orientation:0]];
     [self.navigationController pushViewController:imageEditingViewController animated:YES];
 }
 
