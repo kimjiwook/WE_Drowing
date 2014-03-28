@@ -21,6 +21,8 @@
 		DE650D8318D7CC2300C793EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE650D6518D7CC2300C793EE /* UIKit.framework */; };
 		DE650D8B18D7CC2300C793EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE650D8918D7CC2300C793EE /* InfoPlist.strings */; };
 		DE650D8D18D7CC2300C793EE /* WE_DrowingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE650D8C18D7CC2300C793EE /* WE_DrowingTests.m */; };
+		DE7A2AD818E53982003E2191 /* StretchyHeaderCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7A2AD718E53982003E2191 /* StretchyHeaderCollectionViewLayout.m */; };
+		DE7A2ADA18E53B71003E2191 /* Menu_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7A2AD918E53B71003E2191 /* Menu_Icon.png */; };
 		DEC691A718D81F5E004DD632 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,9 @@
 		DE650D8818D7CC2300C793EE /* WE_DrowingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WE_DrowingTests-Info.plist"; sourceTree = "<group>"; };
 		DE650D8A18D7CC2300C793EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE650D8C18D7CC2300C793EE /* WE_DrowingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WE_DrowingTests.m; sourceTree = "<group>"; };
+		DE7A2AD618E53982003E2191 /* StretchyHeaderCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StretchyHeaderCollectionViewLayout.h; path = Lib/StretchyHeaderCollectionViewLayout.h; sourceTree = SOURCE_ROOT; };
+		DE7A2AD718E53982003E2191 /* StretchyHeaderCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StretchyHeaderCollectionViewLayout.m; path = Lib/StretchyHeaderCollectionViewLayout.m; sourceTree = SOURCE_ROOT; };
+		DE7A2AD918E53B71003E2191 /* Menu_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu_Icon.png; sourceTree = "<group>"; };
 		DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -129,6 +134,7 @@
 		DE650D6818D7CC2300C793EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE7A2AD918E53B71003E2191 /* Menu_Icon.png */,
 				DE650D6918D7CC2300C793EE /* WE_Drowing-Info.plist */,
 				DE650D6A18D7CC2300C793EE /* InfoPlist.strings */,
 				DE650D6D18D7CC2300C793EE /* main.m */,
@@ -182,6 +188,8 @@
 		DEC691A418D801AB004DD632 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DE7A2AD618E53982003E2191 /* StretchyHeaderCollectionViewLayout.h */,
+				DE7A2AD718E53982003E2191 /* StretchyHeaderCollectionViewLayout.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE650D7A18D7CC2300C793EE /* Images.xcassets in Resources */,
+				DE7A2ADA18E53B71003E2191 /* Menu_Icon.png in Resources */,
 				DE650D6C18D7CC2300C793EE /* InfoPlist.strings in Resources */,
 				DE650D7518D7CC2300C793EE /* Main.storyboard in Resources */,
 			);
@@ -297,6 +306,7 @@
 				DE650D6E18D7CC2300C793EE /* main.m in Sources */,
 				DE650D7218D7CC2300C793EE /* WE_DrowingAppDelegate.m in Sources */,
 				DE650D7818D7CC2300C793EE /* WE_DrowingViewController.m in Sources */,
+				DE7A2AD818E53982003E2191 /* StretchyHeaderCollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

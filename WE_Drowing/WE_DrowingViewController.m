@@ -14,19 +14,30 @@
 @end
 
 @implementation WE_DrowingViewController
-@synthesize collectionViews, assets, headerView;
+@synthesize collectionViews, assets;
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    StretchyHeaderCollectionViewLayout *layout = [[StretchyHeaderCollectionViewLayout alloc] init];
+//    [layout setSectionInset:UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)];
+    [layout setItemSize:CGSizeMake(self.view.bounds.size.width, we_HeaderHeight)];
+    [layout setHeaderReferenceSize:CGSizeMake(self.view.bounds.size.width, we_HeaderHeight)];
     
     collectionViews = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     [collectionViews setBackgroundColor:[UIColor whiteColor]];
+    
     [collectionViews registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     
     [collectionViews registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
     
+    [collectionViews setAlwaysBounceVertical:YES];
+    [collectionViews setShowsVerticalScrollIndicator:NO];
     [collectionViews setDelegate:self];
     [collectionViews setDataSource:self];
     [self.view addSubview:collectionViews];
@@ -78,7 +89,7 @@
 
 // Header
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    return 1;
 }
 
 // Section for Item Count...
@@ -113,32 +124,20 @@
 }
 
 - (UICollectionReusableView *) collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"@@@@@@@@@");
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        UICollectionReusableView *rView = [[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, we_HeaderHeight)];
-        [rView setBackgroundColor:[UIColor brownColor]];
-        
-//        headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, we_HeaderHeight)];
-//        [headerView setBackgroundColor:[UIColor brownColor]];
 
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        UICollectionReusableView *rView = [collectionViews dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Header" forIndexPath:indexPath];
+        [rView setBackgroundColor:[UIColor purpleColor]];
         
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.bounds.size.width/2)-25, 25, 50, 50)];
+        [btn setImage:[UIImage imageNamed:@"Menu_Icon.png"] forState:UIControlStateNormal];
+        [btn setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+        [rView addSubview:btn];
+
         return rView;
     }
-    return nil;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    int offset = we_HeaderHeight - 320;
-    int y = scrollView.contentOffset.y;
-    if (y <= offset) {
-        [scrollView setContentOffset:CGPointMake(0, offset)];
-    }
     
-    if (y <= 0 && y >= offset) {
-        self.headerView.frame = CGRectMake(0, (offset - y) / 2, 320, 320);
-    } else if (y >= 0) {
-        self.headerView.frame = CGRectMake(0, offset / 2 - y, 320, 320);
-    }
+    return nil;
 }
 
 @end
