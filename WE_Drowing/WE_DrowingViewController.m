@@ -26,7 +26,7 @@
     [layout setItemSize:CGSizeMake(self.view.bounds.size.width, we_HeaderHeight)];
     [layout setHeaderReferenceSize:CGSizeMake(self.view.bounds.size.width, we_HeaderHeight)];
     
-    collectionViews = [[UICollectionView alloc] initWithFrame:CGRectMake(0, -20, 320, self.view.bounds.size.height+20) collectionViewLayout:layout];
+    collectionViews = [[UICollectionView alloc] initWithFrame:CGRectMake(0, -20, self.view.bounds.size.width, self.view.bounds.size.height+20) collectionViewLayout:layout];
     [collectionViews setBackgroundColor:[UIColor whiteColor]];
     
     [collectionViews registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
@@ -40,11 +40,6 @@
     [self.view addSubview:collectionViews];
     
     [self assetsLibrayCreate];
-
-    UIView *status = [[UIView alloc] initWithFrame:CGRectMake(0, -20, 320, 20)];
-    [status setBackgroundColor:[UIColor purpleColor]];
-    [self.view addSubview:status];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
