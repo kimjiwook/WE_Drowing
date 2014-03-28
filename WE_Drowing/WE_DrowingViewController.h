@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "StretchyHeaderCollectionViewLayout.h"
+#import "ImageEditingViewController.h"
 
 @interface WE_DrowingViewController : UIViewController
 <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+{
+    ImageEditingViewController *imageEditingViewController;
+}
 
 @property (strong, nonatomic) UICollectionView *collectionViews;
 @property (nonatomic, strong) NSArray *assets;

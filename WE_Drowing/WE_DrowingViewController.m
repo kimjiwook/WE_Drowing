@@ -7,7 +7,7 @@
 
 #import "WE_DrowingViewController.h"
 
-#define we_HeaderHeight   100
+#define we_HeaderHeight   80
 
 @interface WE_DrowingViewController ()
 
@@ -29,7 +29,7 @@
     [layout setItemSize:CGSizeMake(self.view.bounds.size.width, we_HeaderHeight)];
     [layout setHeaderReferenceSize:CGSizeMake(self.view.bounds.size.width, we_HeaderHeight)];
     
-    collectionViews = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    collectionViews = [[UICollectionView alloc] initWithFrame:CGRectMake(0, -20, 320, self.view.bounds.size.height+20) collectionViewLayout:layout];
     [collectionViews setBackgroundColor:[UIColor whiteColor]];
     
     [collectionViews registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
@@ -43,6 +43,11 @@
     [self.view addSubview:collectionViews];
     
     [self assetsLibrayCreate];
+
+    UIView *status = [[UIView alloc] initWithFrame:CGRectMake(0, -20, 320, 20)];
+    [status setBackgroundColor:[UIColor purpleColor]];
+    [self.view addSubview:status];
+    
 }
 
 - (void) assetsLibrayCreate {
@@ -129,7 +134,7 @@
         UICollectionReusableView *rView = [collectionViews dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Header" forIndexPath:indexPath];
         [rView setBackgroundColor:[UIColor purpleColor]];
         
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.bounds.size.width/2)-25, 25, 50, 50)];
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.bounds.size.width/2)-25, we_HeaderHeight/2-20, 50, 50)];
         [btn setImage:[UIImage imageNamed:@"Menu_Icon.png"] forState:UIControlStateNormal];
         [btn setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
         [rView addSubview:btn];
@@ -138,6 +143,18 @@
     }
     
     return nil;
+}
+
+// Select Item...
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"ImageEditingView" bundle:nil];
+    
+    imageEditingViewController = [storyboard instantiateViewControllerWithIdentifier:@"ImageEditingViewController"];
+//    ALAsset *asset = [self.assets[indexPath.row] valueForKey:@"ALAsset"];
+//    ALAssetRepresentation *defaultRep = [asset defaultRepresentation];
+//    [we_ImageViewController initWithImageView:[UIImage imageWithCGImage:[defaultRep fullScreenImage] scale:[defaultRep scale] orientation:0]];
+    [self.navigationController pushViewController:imageEditingViewController animated:YES];
 }
 
 @end
