@@ -27,6 +27,9 @@
 		DE7A2AE618E5529E003E2191 /* ImageEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7A2AE518E5529E003E2191 /* ImageEditingViewController.m */; };
 		DE7A2AE818E552D4003E2191 /* ImageEditingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7A2AE718E552D4003E2191 /* ImageEditingView.storyboard */; };
 		DEC691A718D81F5E004DD632 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */; };
+		DECFF56218E93EE4006A6184 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFF56118E93EE4006A6184 /* QuartzCore.framework */; };
+		DECFF56518E94822006A6184 /* ModelScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFF56418E94822006A6184 /* ModelScrollView.m */; };
+		DECFF56918E9596B006A6184 /* Size_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFF56818E9596B006A6184 /* Size_ViewController.m */; };
 		DEE2F1CA18E8F91300A3E85C /* JCDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE2F1C918E8F91300A3E85C /* JCDrawView.m */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,11 @@
 		DE7A2AE518E5529E003E2191 /* ImageEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditingViewController.m; sourceTree = "<group>"; };
 		DE7A2AE718E552D4003E2191 /* ImageEditingView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageEditingView.storyboard; sourceTree = "<group>"; };
 		DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		DECFF56118E93EE4006A6184 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DECFF56318E94822006A6184 /* ModelScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelScrollView.h; sourceTree = "<group>"; };
+		DECFF56418E94822006A6184 /* ModelScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelScrollView.m; sourceTree = "<group>"; };
+		DECFF56718E9596B006A6184 /* Size_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Size_ViewController.h; sourceTree = "<group>"; };
+		DECFF56818E9596B006A6184 /* Size_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Size_ViewController.m; sourceTree = "<group>"; };
 		DEE2F1C818E8F91300A3E85C /* JCDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCDrawView.h; sourceTree = "<group>"; };
 		DEE2F1C918E8F91300A3E85C /* JCDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCDrawView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECFF56218E93EE4006A6184 /* QuartzCore.framework in Frameworks */,
 				DEC691A718D81F5E004DD632 /* AssetsLibrary.framework in Frameworks */,
 				DE650D6418D7CC2300C793EE /* CoreGraphics.framework in Frameworks */,
 				DE650D6618D7CC2300C793EE /* UIKit.framework in Frameworks */,
@@ -120,6 +129,7 @@
 		DE650D6018D7CC2300C793EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DECFF56118E93EE4006A6184 /* QuartzCore.framework */,
 				DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */,
 				DE650D6118D7CC2300C793EE /* Foundation.framework */,
 				DE650D6318D7CC2300C793EE /* CoreGraphics.framework */,
@@ -198,6 +208,8 @@
 				DE7A2AE418E5529E003E2191 /* ImageEditingViewController.h */,
 				DE7A2AE518E5529E003E2191 /* ImageEditingViewController.m */,
 				DE7A2AE718E552D4003E2191 /* ImageEditingView.storyboard */,
+				DECFF56318E94822006A6184 /* ModelScrollView.h */,
+				DECFF56418E94822006A6184 /* ModelScrollView.m */,
 			);
 			name = ImageEditingViews;
 			sourceTree = "<group>";
@@ -230,6 +242,7 @@
 		DEC691A418D801AB004DD632 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DECFF56618E9596B006A6184 /* Size_ViewController */,
 				DEE2F1C718E8F91300A3E85C /* JCDrawView */,
 				DE7A2ADF18E55186003E2191 /* ImageHelper */,
 				DE7A2ADB18E5516C003E2191 /* StretchyHeaderCollectionViewLayout */,
@@ -246,6 +259,16 @@
 			);
 			name = Main;
 			sourceTree = "<group>";
+		};
+		DECFF56618E9596B006A6184 /* Size_ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DECFF56718E9596B006A6184 /* Size_ViewController.h */,
+				DECFF56818E9596B006A6184 /* Size_ViewController.m */,
+			);
+			name = Size_ViewController;
+			path = Lib/Size_ViewController;
+			sourceTree = SOURCE_ROOT;
 		};
 		DEE2F1C718E8F91300A3E85C /* JCDrawView */ = {
 			isa = PBXGroup;
@@ -357,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECFF56918E9596B006A6184 /* Size_ViewController.m in Sources */,
 				DE650D6E18D7CC2300C793EE /* main.m in Sources */,
 				DE7A2AE618E5529E003E2191 /* ImageEditingViewController.m in Sources */,
 				DE650D7218D7CC2300C793EE /* WE_DrowingAppDelegate.m in Sources */,
@@ -364,6 +388,7 @@
 				DEE2F1CA18E8F91300A3E85C /* JCDrawView.m in Sources */,
 				DE7A2ADE18E5516C003E2191 /* StretchyHeaderCollectionViewLayout.m in Sources */,
 				DE7A2AE218E55186003E2191 /* ImageHelper.m in Sources */,
+				DECFF56518E94822006A6184 /* ModelScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

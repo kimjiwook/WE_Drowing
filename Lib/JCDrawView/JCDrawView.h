@@ -11,7 +11,7 @@
 
 @interface JCDrawView : UIView
 
-@property (nonatomic,retain) IBOutlet UIImageView *drawImageView;
+@property (nonatomic,retain) UIImageView *drawImageView;
 @property (nonatomic,retain) UIColor *currentColor;
 
 @property (nonatomic) CGPoint lastPoint;

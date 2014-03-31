@@ -119,7 +119,7 @@
 {
 	// calculate the fitted size
 	CGSize size = [ImageHelper fitSize:image.size inSize:viewsize];
-	
+    NSLog(@"image Size : %lf,%lf",size.width,size.height);
 	UIGraphicsBeginImageContext(viewsize);
 
 	float dwidth = (viewsize.width - size.width) / 2.0f;
