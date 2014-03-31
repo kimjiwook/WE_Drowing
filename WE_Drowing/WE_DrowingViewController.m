@@ -43,6 +43,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+//    [self viewDidLoad];
+//    [self.collectionViews reloadData];
+    [self.collectionViews performBatchUpdates:^{
+        [self.collectionViews reloadSections:[NSIndexSet indexSetWithIndex:0]];
+        NSLog(@"viewWillAppear");
+    }completion:nil];
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }
 

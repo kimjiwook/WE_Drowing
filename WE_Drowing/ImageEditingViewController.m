@@ -71,12 +71,18 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     
-    UIButton *tempBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-60, 110, 60)];
+    UIButton *tempBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-60, 106, 60)];
     [tempBtn setBackgroundColor:[UIColor grayColor]];
     [tempBtn setTitle:@"NEW" forState:UIControlStateNormal];
     [tempBtn addTarget:self action:@selector(tempAcc:) forControlEvents:UIControlEventTouchUpInside];
     [tempBtn setHidden:NO];
     [self.view addSubview:tempBtn];
+    
+    UIButton *saveBtn = [[UIButton alloc] initWithFrame:CGRectMake(106+1, self.view.bounds.size.height-60, 106, 60)];
+    [saveBtn setBackgroundColor:[UIColor orangeColor]];
+    [saveBtn setTitle:@"SAVE" forState:UIControlStateNormal];
+    [saveBtn addTarget:self action:@selector(saveAcc:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:saveBtn];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,6 +106,28 @@
 
 - (IBAction)tempAcc:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)saveAcc:(id)sender {
+    if (imageView.image != nil) {
+        UIImageWriteToSavedPhotosAlbum(imageView.image, self, @selector(image:didExportWithError:contextInfo:), nil);
+    }
+}
+
+- (void)image:(UIImage *)image didExportWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    NSString *message = @"SAVE";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    
+    if (error) {
+        message = [NSString stringWithFormat:@"Couldn't save image.\n%@", [error localizedDescription]];
+        [alert setMessage:message];
+        [alert setCancelButtonIndex:[alert addButtonWithTitle:@"Ok"]];
+    } else {
+        [alert setCancelButtonIndex:[alert addButtonWithTitle:@"OK"]];
+    }
+    
+    [alert show];
+    alert = nil;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
