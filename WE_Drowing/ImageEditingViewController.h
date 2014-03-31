@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ImageHelper.h"
 
-@interface ImageEditingViewController : UIViewController
+@interface ImageEditingViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 - (void) initWithImageView :(UIImage *)image;
 

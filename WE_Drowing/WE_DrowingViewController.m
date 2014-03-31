@@ -108,7 +108,7 @@
 
 // Cell Size
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(106, 106);
+    return CGSizeMake(79.25f, 79.25f);
 }
 
 // CollectionViewCell Item Create...

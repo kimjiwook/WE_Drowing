@@ -27,6 +27,7 @@
 		DE7A2AE618E5529E003E2191 /* ImageEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7A2AE518E5529E003E2191 /* ImageEditingViewController.m */; };
 		DE7A2AE818E552D4003E2191 /* ImageEditingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7A2AE718E552D4003E2191 /* ImageEditingView.storyboard */; };
 		DEC691A718D81F5E004DD632 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */; };
+		DEE2F1CA18E8F91300A3E85C /* JCDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE2F1C918E8F91300A3E85C /* JCDrawView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		DE7A2AE518E5529E003E2191 /* ImageEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditingViewController.m; sourceTree = "<group>"; };
 		DE7A2AE718E552D4003E2191 /* ImageEditingView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageEditingView.storyboard; sourceTree = "<group>"; };
 		DEC691A618D81F5E004DD632 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		DEE2F1C818E8F91300A3E85C /* JCDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCDrawView.h; sourceTree = "<group>"; };
+		DEE2F1C918E8F91300A3E85C /* JCDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCDrawView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,7 @@
 		DEC691A418D801AB004DD632 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DEE2F1C718E8F91300A3E85C /* JCDrawView */,
 				DE7A2ADF18E55186003E2191 /* ImageHelper */,
 				DE7A2ADB18E5516C003E2191 /* StretchyHeaderCollectionViewLayout */,
 			);
@@ -242,6 +246,16 @@
 			);
 			name = Main;
 			sourceTree = "<group>";
+		};
+		DEE2F1C718E8F91300A3E85C /* JCDrawView */ = {
+			isa = PBXGroup;
+			children = (
+				DEE2F1C818E8F91300A3E85C /* JCDrawView.h */,
+				DEE2F1C918E8F91300A3E85C /* JCDrawView.m */,
+			);
+			name = JCDrawView;
+			path = Lib/JCDrawView;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -347,6 +361,7 @@
 				DE7A2AE618E5529E003E2191 /* ImageEditingViewController.m in Sources */,
 				DE650D7218D7CC2300C793EE /* WE_DrowingAppDelegate.m in Sources */,
 				DE650D7818D7CC2300C793EE /* WE_DrowingViewController.m in Sources */,
+				DEE2F1CA18E8F91300A3E85C /* JCDrawView.m in Sources */,
 				DE7A2ADE18E5516C003E2191 /* StretchyHeaderCollectionViewLayout.m in Sources */,
 				DE7A2AE218E55186003E2191 /* ImageHelper.m in Sources */,
 			);
