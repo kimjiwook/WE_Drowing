@@ -60,7 +60,7 @@
     
     prePreviousPoint = CGPointZero;
     previousPoint = CGPointZero;
-    lineWidth = 1.0;
+    lineWidth = 2.0;
     currentColor = [UIColor redColor];
     
 }
