@@ -49,6 +49,7 @@
     [self.imageView setFrame:CGRectMake(100, 100, rect.size.width, rect.size.height)];
     self.imageView.image = [ImageHelper image:image fitInView:self.imageView];
     [self.imageView setBackgroundColor:[UIColor blackColor]];
+    
 //    [self.scrollView addSubview:self.imageView];
     
     self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
@@ -60,7 +61,7 @@
     
     prePreviousPoint = CGPointZero;
     previousPoint = CGPointZero;
-    lineWidth = 2.0;
+    lineWidth = 1.5;
     currentColor = [UIColor redColor];
     
 }
