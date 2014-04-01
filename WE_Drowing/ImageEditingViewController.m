@@ -4,7 +4,7 @@
 //
 //  Created by JWMAC on 2014. 3. 28..
 //  Copyright (c) 2014년 KimJiWook. All rights reserved.
-//
+//  git test
 
 #import "ImageEditingViewController.h"
 
