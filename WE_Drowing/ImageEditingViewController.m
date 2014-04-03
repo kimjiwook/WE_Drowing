@@ -27,33 +27,36 @@
 - (void) initWithImageView :(UIImage *)image {
     NSLog(@"image Size : %lf,%lf",image.size.width,image.size.height);
     
-    CGRect rect = self.view.bounds;
+    CGRect rect;
+    rect.origin.x = 0;
+    rect.origin.y = 20;
+    rect.size.width = self.view.bounds.size.width;
+    rect.size.height = self.view.bounds.size.height-20;
     
-    self.scrollView = [[ModelScrollView alloc] initWithFrame:rect];
-    self.scrollView.bouncesZoom = YES;
-    self.scrollView.minimumZoomScale = 1.0f;
-    self.scrollView.maximumZoomScale = 2.5f;
+//    self.scrollView = [[ModelScrollView alloc] initWithFrame:rect];
+//    self.scrollView.bouncesZoom = YES;
+//    self.scrollView.minimumZoomScale = 1.0f;
+//    self.scrollView.maximumZoomScale = 2.5f;
 //    [self.scrollView setShowsVerticalScrollIndicato:NO];
     
-    [self.scrollView setDelegate:self];
-    [self.scrollView setScrollEnabled:NO];
+//    [self.scrollView setDelegate:self];
+//    [self.scrollView setScrollEnabled:NO];
 //    [self.view addSubview:self.scrollView];
     
-
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, 400)];
     CGSize toSize = [ImageHelper fitSize:image.size inSize:imageView.frame.size];
     rect.size = toSize;
-    rect.origin.x = 100;
-    rect.origin.y = 100;
-    [self.imageView setFrame:CGRectMake(100, 100, rect.size.width, rect.size.height)];
-    self.imageView.image = [ImageHelper image:image fitInView:self.imageView];
+    [self.imageView setFrame:rect];
+//    self.imageView.image = [ImageHelper image:image fitInView:self.imageView];
+    
+    self.imageView.image = image;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.imageView setBackgroundColor:[UIColor blackColor]];
     
 //    [self.scrollView addSubview:self.imageView];
     
-    self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
-    
+    NSLog(@"image Size : %lf,%lf",image.size.width,image.size.height);
     
     [self.view addSubview:imageView];
     
@@ -101,9 +104,9 @@
 }
 
 //입력인자로 들어온 scrollView 객체에서 스크롤이 시작되기 직전에 호출되는 메시지
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-	return imageView;
-}
+//- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+//	return imageView;
+//}
 
 - (IBAction)tempAcc:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -137,7 +140,7 @@
     [super touchesBegan:touches withEvent:event];
     UITouch *touch = [touches anyObject];
     
-    self.previousPoint = [touch locationInView:self.view];
+    self.previousPoint = [touch locationInView:self.imageView];
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -146,8 +149,8 @@
     UITouch *touch = [touches anyObject];
     
     self.prePreviousPoint = self.previousPoint;
-    self.previousPoint = [touch previousLocationInView:self.view];
-    CGPoint currentPoint = [touch locationInView:self.view];
+    self.previousPoint = [touch previousLocationInView:self.imageView];
+    CGPoint currentPoint = [touch locationInView:self.imageView];
     
     // calculate mid point
     CGPoint mid1 = [self calculateMidPointForPoint:self.previousPoint andPoint:self.prePreviousPoint];
@@ -191,8 +194,10 @@
     CGContextSetLineWidth(context, self.lineWidth);
     CGContextStrokePath(context);
     
-    self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+//    self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+    
+    NSLog(@"image Size : %lf,%lf",self.imageView.image.size.width,self.imageView.image.size.height);
 }
 
 - (CGPoint)calculateMidPointForPoint:(CGPoint)p1 andPoint:(CGPoint)p2 {
@@ -202,7 +207,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"touchesEnded");
     UITouch *touch = [touches anyObject];
-    CGPoint currentPoint = [touch locationInView:self.view];
+    CGPoint currentPoint = [touch locationInView:self.imageView];
     
     [self setLineWidth:1.0];
     
