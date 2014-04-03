@@ -194,8 +194,8 @@
     CGContextSetLineWidth(context, self.lineWidth);
     CGContextStrokePath(context);
     
-//    self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
+    self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
     NSLog(@"image Size : %lf,%lf",self.imageView.image.size.width,self.imageView.image.size.height);
 }
